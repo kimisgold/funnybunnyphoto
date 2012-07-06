@@ -44,8 +44,13 @@
         
         <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
         <p class="date">Posted <?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?>
+        <?php if(has_category()): ?>
+        in <?php the_category(', '); ?>
+        <?php endif; ?>
+        | <a href="<?php comments_link(); ?>"><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></a>
+        <br/>
         <?php if(get_the_tags()): ?>
-            in <?php the_tags('', ', '); ?>
+        Tagged: <?php the_tags('', ', '); ?>
         <?php endif; ?>
         </p>
     

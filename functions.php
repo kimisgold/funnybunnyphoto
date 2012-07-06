@@ -43,5 +43,8 @@ if ( function_exists( 'add_image_size' ) ) {
 
 wp_enqueue_script('modernizr.custom.40618', get_template_directory_uri() . '/js/modernizr.custom.40618.js',array(),'1.0',false);
 
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' )
 
 ?>
